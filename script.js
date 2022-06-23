@@ -14,11 +14,7 @@ function getPasswordOptions() {
     return null;
   }
 
-  // Conditional statement to check if password length is at least 8 characters long. Prompts end if this evaluates false
-  if (d20 > 4) {
-    alert( "error invalid input");
-    return null;
-  }
+  
 
 
   // Variable to store boolean regarding the inclusion of special characters
@@ -69,7 +65,7 @@ function getPasswordOptions() {
   }
   var d12 = parseInt(
     prompt("how many d12 do you have"),
-    10
+  
   );
 
   // Conditional statement to check if password length is a number. Prompts end if this evaluates false
@@ -79,7 +75,7 @@ function getPasswordOptions() {
   }
   var static = parseInt(
     prompt("static damage modifier"),
-    10
+    
   );
 
   // Conditional statement to check if password length is a number. Prompts end if this evaluates false
@@ -89,7 +85,7 @@ function getPasswordOptions() {
   }
   var thac0 = parseInt(
     prompt("what do you need to hit?"),
-    10
+    
   );
 
   // Conditional statement to check if password length is a number. Prompts end if this evaluates false
@@ -97,29 +93,39 @@ function getPasswordOptions() {
     alert('attacks must be an integer');
     return null;
   }
-
+console.log(thac0)
+console.log(d4)
+console.log ("d4s")
+console.log(d6)
+console.log ("d6s")
+console.log(d8)
+console.log ("d8s")
+console.log(d10)
+console.log ("d10s")
+console.log(d12)
+console.log ("d12s")
+console.log(attacks)
+console.log ("attacks")
 
 var damage
   if (d20==1)
-  {damage=((21-thac0)/20)^2 *attacks*(d4*2.5+d6*3.5+d8*4.5+d10*5.5+d12*6.5+static-static/400)
+  {damage = ((thac0*thac0)/400) *attacks*(d4*2.5+d6*3.5+d8*4.5+d10*5.5+d12*6.5+static-static/400)
   alert(damage) 
   }
-  else if (d20==2)
-  {damage =(21-thac0)/20 *attacks*(d4*2.5+d6*3.5+d8*4.5+d10*5.5+d12*6.5+static-static/20)
+  else if (d20 == 2)
+  {damage =((21-thac0)/20 *attacks*(d4*2.5+d6*3.5+d8*4.5+d10*5.5+d12*6.5+static-static/20))
   alert(damage) 
   }
-  else if (d20==3)
-  {damage= (((thac0)/20)^2) *attacks*(d4*2.5+d6*3.5+d8*4.5+d10*5.5+d12*6.5+static-static/400)
+  else if (d20 == 3)
+  {damage= ((400-thac0*thac0)/400)*attacks*(d4*2.5+d6*3.5+d8*4.5+d10*5.5+d12*6.5+static-static/400)
+  console.log(damage)
   alert(damage) 
   }
-  else if(d20== 4)
-  { damage=((thac0)/20)^3 *attacks*(d4*2.5+d6*3.5+d8*4.5+d10*5.5+d12*6.5+static-static/400)
+  else if(d20 == 4)
+  { damage=(((thac0*thac0*thac0)/8000) *attacks*(d4*2.5+d6*3.5+d8*4.5+d10*5.5+d12*6.5+static-static/8000))
   alert(damage) 
   }
-else {
-
-}}
-  
+}
 
 function generatePassword() {
    getPasswordOptions();
